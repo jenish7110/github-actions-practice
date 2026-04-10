@@ -1,7 +1,7 @@
 name: Jenish first workflow 
 
 on:
- push:
+  push:
 
 jobs:
  greet:
