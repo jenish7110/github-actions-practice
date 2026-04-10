@@ -3,7 +3,7 @@ name: Jenish first workflow
 on:
  push:
 
-Jobs:
+jobs:
  greet:
   runs-on: ubuntu-latest
   
