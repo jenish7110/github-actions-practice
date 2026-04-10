@@ -25,4 +25,7 @@ jobs:
 
       - name: Shows OS 
         run: uname -a 
+        
+      - name: Brek pipeline
+        run: exit 1
 
