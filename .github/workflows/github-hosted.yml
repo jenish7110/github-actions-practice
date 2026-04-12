@@ -1,0 +1,43 @@
+name: Github Hosted Runenr 
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ubuntu-job:
+    name: Run on ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name: System information
+        run: |
+          echo "=== Ubuntu runner info ==="
+          echo "OS: Ubuntu"
+          echo "Hostname: $(hostname)"
+          echo "Current user: $(whoami)"
+          echo "Os details: $(cat /etc/os-release | grep PRETTY_NAME)"
+  
+  windows-job:
+    name: Run on windows 
+    runs-on: windows-latest
+    steps:
+      - name: System information
+        shell: powershell
+        run: |
+          Write-Host "==WINDOWS Runner INFO"
+          Write-Host "OS: windows"
+          Write-host "Hostname: $env:COMPUTERNAME"
+          Write-host "Current User: $env:USERNAME"
+
+  macos-job:
+    name: Run on macos
+    runs-on: macos-latest
+    steps:
+      - name: System information
+        run: |
+          echo "=== Macos Runner INfo "
+          echo "OS:MacOS"
+          echo "hostname: $(hostname)"
+          echo "Current User: $(whoami)"
+          echo "Macos Version: $(sw_vers -productVersion)"
