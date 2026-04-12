@@ -6,7 +6,7 @@ on:
       environment:
         description: 'Target Environment'
         required: true
-        default:'staging'
+        default: 'staging'
         type: choice
         options:
           - staging  
